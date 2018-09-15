@@ -1,0 +1,84 @@
+<!--
+  Generated template for the BuzzDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>BUZZ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="my-profile">
+    <div *ngIf="selectedItem" >
+            <div class="bar" text-center> 
+                    <img [src]="'https://buzzer-api.azurewebsites.net/profile/uploads/'+selectedItem.id+'.jpg'" (error)="img.src = 'assets/imgs/logo.png' "   #img ><br>
+                    <h3>{{selectedItem.name}}</h3>
+                    <h4>{{selectedItem.status}} | {{selectedItem.job}}</h4>
+                    <h5>
+                        <button ion-button icon-only clear small  class="like">
+                        <ion-icon name="mail"></ion-icon>
+                            {{selectedItem.mail}}
+                        </button>
+                        </h5>
+                    <h5>
+                        <button ion-button icon-only clear small  class="like">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                            {{selectedItem.youtube}}
+                        </button>
+                    </h5>
+                    <h5>
+                        <button ion-button icon-only clear small  class="like">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                                  {{selectedItem.instagram}}
+                        </button>
+                    </h5>
+                    <h5>
+                        <button ion-button icon-only clear small  class="like" >
+                        <ion-icon name="logo-facebook"></ion-icon>
+                                        {{selectedItem.facebook}}
+                        </button>
+                    </h5>
+                    <h5>
+                        <button ion-button icon-only clear small  class="like" >
+                        <ion-icon name="logo-twitter"></ion-icon>
+                        {{selectedItem.twitter}}
+                        </button>
+                    </h5>
+                    <h5>
+                        <button ion-button icon-only clear small  class="like">
+                        <ion-icon name="call"></ion-icon>
+                        {{selectedItem.phone}}
+                        </button>
+                    </h5>
+                  
+                  </div>
+                <br>
+                  <ion-grid class="bar" text-center>
+                    <ion-row>
+                        <ion-col col-6>
+                            <h5 class="like">Follower <ion-icon name="people"></ion-icon>  {{selectedItem.follower}}</h5>
+                        </ion-col>
+                        <ion-col col-6>
+                                <button *ngIf="!followbutton" ion-button round outline (click)="follow()">Follow <ion-icon name="add"></ion-icon></button>
+                                <button *ngIf="followbutton" ion-button round >Followed <ion-icon name="checkmark-circle-outline"></ion-icon></button>
+                        </ion-col>
+                        <ion-col col-12>
+                            <h5 class="like"> {{selectedItem.price}}</h5>
+                        </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                  <br>
+                  <div class="bio">
+                    <h3>About Me: </h3>
+                      <p>
+                        {{selectedItem.bio}}
+                        </p>
+                  </div>
+    </div>
+  
+</ion-content>

@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+    
+        <ion-title>
+          BUZZ
+        </ion-title>
+         
+      </ion-navbar>
+</ion-header>
+
+<ion-content padding class="my-profile">
+  <div class="bar" text-center> 
+    <!--<img src="assets/imgs/logo.png" >-->
+    <img   [src]="imageFileName" (error)="img.src = 'assets/imgs/logo.png' "  #img  />
+    <br>
+    <ion-item>
+        <!--<p>{{imageURI}}</p> <p>{{res}}</p>-->
+        <button ion-button color="secondary" (click)="getImage()">Get Image</button> <button ion-button (click)="uploadFile()">Upload</button>
+    </ion-item>
+    
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Job</ion-label>
+        <ion-input type="text" [(ngModel)]="user.job"  name="job"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>I am a</ion-label>
+        <ion-select [(ngModel)]="user.status" name="status">
+          <ion-option value="Buzzer">Buzzer</ion-option>
+          <ion-option value="Advertizer">Advertizer</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Youtube Account</ion-label>
+        <ion-input type="text" [(ngModel)]="user.youtube" name="youtube"></ion-input>
+      </ion-item>
+    <ion-item>
+        <ion-label>Instagram Account</ion-label>
+        <ion-input type="text" [(ngModel)]="user.instagram" name="instagram"></ion-input>
+      </ion-item>
+    <ion-item>
+        <ion-label>Facebook Account</ion-label>
+        <ion-input type="text" [(ngModel)]="user.facebook" name="facebook"></ion-input>
+      </ion-item>
+    <ion-item>
+        <ion-label>Twitter Account</ion-label>
+        <ion-input type="text" [(ngModel)]="user.twitter" name="twitter"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Phone</ion-label>
+        <ion-input type="text" [(ngModel)]="user.phone" name="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Follower</ion-label>
+      <ion-input type="text" [(ngModel)]="user.follower" name="follower"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input type="text" [(ngModel)]="user.price" name="price"></ion-input>
+</ion-item>
+
+    <ion-item>
+        <ion-label>About Me</ion-label>
+        <ion-textarea [(ngModel)]="user.bio" name="bio"></ion-textarea>
+      </ion-item>
+
+  
+      <button ion-button (click)="Submit()">Upload</button>
+  </div>
+  
+  
+  
+</ion-content>

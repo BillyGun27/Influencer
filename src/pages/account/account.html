@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar>
+    
+        <ion-title>
+          BUZZ
+        </ion-title>
+         
+        <ion-buttons end>
+            <button ion-button icon-only float-right clear (click)="edit()" class="like">
+                <ion-icon  name="create"></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-navbar>
+</ion-header>
+
+<ion-content padding class="my-profile">
+    <div  *ngFor="let item of items">
+        <div *ngIf="id==item.id">
+                <div class="bar" text-center> 
+                        <!--<img src="assets/imgs/logo.png" >-->
+                        <img [src]="'https://buzzer-api.azurewebsites.net/profile/uploads/'+item.id+'.jpg'" (error)="img.src = 'assets/imgs/logo.png' "  #img />
+                        <br>
+                        <h3>{{item.name}}</h3>
+                        <h4>{{item.status}} | {{item.job}}</h4>
+                        <h5>
+                            <button ion-button icon-only clear small  class="like">
+                            <ion-icon name="mail"></ion-icon>
+                                {{item.email}}
+                            </button>
+                            </h5>
+                        <h5>
+                            <button ion-button icon-only clear small  class="like">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                            {{item.youtube}}
+                            </button>
+                        </h5>
+                        <h5>
+                            <button ion-button icon-only clear small  class="like">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                                       {{item.instagram}}
+                            </button>
+                        </h5>
+                        <h5>
+                            <button ion-button icon-only clear small  class="like" >
+                            <ion-icon name="logo-facebook"></ion-icon>
+                                            {{item.facebook}}
+                            </button>
+                        </h5>
+                        <h5>
+                            <button ion-button icon-only clear small  class="like" >
+                            <ion-icon name="logo-twitter"></ion-icon>
+                                {{item.twitter}}
+                            </button>
+                        </h5>
+                        <h5>
+                            <button ion-button icon-only clear small  class="like">
+                            <ion-icon name="call"></ion-icon>
+                                {{item.phone}}
+                            </button>
+                        </h5>
+                      
+                      </div>
+                    <br>
+                      <ion-grid class="bar" text-center>
+                        <ion-row>
+                            <ion-col col-6>
+                                <h5 class="like">Follower <ion-icon name="people"></ion-icon> {{item.follower}}</h5>
+                            </ion-col>
+                            <ion-col col-6>
+                                <h5 class="like">{{item.price}}</h5>
+                            </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                      <br>
+                      <div class="bio">
+                        <h3>About Me: </h3>
+                          <p>
+                              {{item.bio}}
+                            </p>
+                      </div>
+
+        </div>
+    </div>
+ 
+  
+  
+</ion-content>

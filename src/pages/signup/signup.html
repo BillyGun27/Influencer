@@ -1,0 +1,35 @@
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+     Welcome to Buzz
+    </div>
+  </div>
+  <div padding>
+      <form (ngSubmit)="signup()">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+            </ion-item>
+          <ion-item>
+                <ion-label>I am a</ion-label>
+                <ion-select [(ngModel)]="user.status" name="status">
+                  <ion-option value="Buzzer">Buzzer</ion-option>
+                  <ion-option value="Advertizer">Advertizer</ion-option>
+                </ion-select>
+            </ion-item>
+          <button ion-button block type="submit" >Register</button>
+      </form>
+    
+    <button ion-button block (click)="login()" class="login">I already have an account</button>
+  </div>
+</ion-content>

@@ -14,3 +14,112 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$colors: (
+primary:    #387ef5,
+secondary:  #32db64,
+danger:     #f53d3d,
+light:      #f4f4f4,
+dark:       #222,
+customColor: #009688,
+);
+
+.toolbar-background {
+    background-color: #387ef5;
+  }
+
+.toolbar-title{
+    color:white;
+}
+
+.tabs-md .tabbar {
+    background: #387ef5;
+}
+
+.tabs-md .tab-button ,.tabs-md .tab-button.tab-button-icon{
+	color: black;
+}
+// selected tab
+.tabs-md .tab-button[aria-selected=true] ,.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+	color: white;
+}
+
+.back-button-icon-md{
+    color:  white;
+}
+
+.like{
+    color : #c52668;
+    
+}
+
+.follow{
+    color : #8f0077;
+}
+
+.my-profile img {
+    width: 140px;
+    height:140px;
+    border-radius: 50%;
+  }
+  
+.my-profile p {
+    color: #60646B;
+}
+
+
+.bar{
+    background: #e8f0ff;
+    padding: 20px 5px;
+    border-radius: 20px;
+}
+.bio{
+    padding: 20px;
+    border: #bdd2f7 2px solid;
+    border-radius: 20px;
+}
+
+.splash-bg {
+    position: relative;
+    background: url('../assets/img/splashbg.png') no-repeat transparent;
+    background-size: cover;
+    height: 45%;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+  }
+
+  @keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+  }
+
+  .splash-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -64px;
+    text-align: center;
+  }
+  .splash-logo {
+    margin: auto;
+    background: url('../assets/img/appicon.png') repeat transparent;
+    background-size: 100%;
+    width: 128px;
+    height: 128px;
+  }
+  .splash-intro {
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 80%;
+    margin: auto;
+  }
+  button.login {
+    margin-top: 25px;
+    background-color: white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #333;
+
+    &.activated {
+      background-color: rgb(220, 220, 220);
+    }
+  }
